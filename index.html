@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="💗 爱心贪吃蛇游戏 - 支持桌面和移动端的HTML5网页游戏">
+    <title>💗 爱心贪吃蛇游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 50px 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+        }
+
+        .game-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .game-btn {
+            display: block;
+            padding: 25px 40px;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+        }
+
+        .game-btn:hover::before {
+            left: 100%;
+        }
+
+        .desktop-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .desktop-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .mobile-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .mobile-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+        }
+
+        .btn-icon {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .features {
+            text-align: left;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .features h2 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .features ul {
+            list-style: none;
+            color: #666;
+        }
+
+        .features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .features li::before {
+            content: '💗';
+            position: absolute;
+            left: 0;
+        }
+
+        .github-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 30px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .game-btn {
+                padding: 20px 30px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💗 爱心贪吃蛇</h1>
+        <p class="subtitle">选择你的平台开始游戏</p>
+
+        <div class="game-buttons">
+            <a href="snake-game.html" class="game-btn desktop-btn">
+                <span class="btn-icon">🖥️</span>
+                桌面版 - 键盘控制
+            </a>
+            <a href="snake-game-mobile.html" class="game-btn mobile-btn">
+                <span class="btn-icon">📱</span>
+                移动版 - 触屏控制
+            </a>
+        </div>
+
+        <div class="features">
+            <h2>✨ 游戏特点</h2>
+            <ul>
+                <li>爱心形状的蛇和食物</li>
+                <li>苹果风格的优雅设计</li>
+                <li>三种难度等级可选</li>
+                <li>流畅的动画和音效</li>
+                <li>本地最高分记录</li>
+            </ul>
+        </div>
+
+        <a href="https://github.com/SunnyWWWccc/go-snake" class="github-link" target="_blank">
+            ⭐ 在 GitHub 上查看源码
+        </a>
+    </div>
+</body>
+</html>
